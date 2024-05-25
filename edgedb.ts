@@ -9,5 +9,8 @@ export const client = createClient({
 });
 
 export const auth = createAuth(client, {
-  baseUrl: "http://localhost:3000",
+  baseUrl:
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000"
+      : "https://3dfy-hosting-test-git-main-katfishsnakes-projects.vercel.app",
 });
