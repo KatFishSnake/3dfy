@@ -43,7 +43,7 @@ export default function Items({ items }: Props) {
             </div>
             <div>
               <p className="mt-1 line-clamp-2 text-sm leading-6 text-gray-600">
-                Author: {item.created_by.email}
+                Author: {item.created_by.name || item.created_by.email}
               </p>
               <DeleteItem item={item} handleDelete={deleteItem} />
             </div>
