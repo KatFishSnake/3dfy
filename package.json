@@ -36,9 +36,10 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "pnpm run prebuild && next build",
     "start": "next start",
     "lint": "next lint",
+    "prebuild": "pnpm run generate:all",
     "auth:setup": "pnpm esr password-auth-setup.ts",
     "generate:edgeql": "npx @edgedb/generate edgeql-js",
     "generate:interfaces": "npx @edgedb/generate interfaces",
