@@ -75,6 +75,7 @@ export default function Navbar({
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
                       <UserCircleIcon className="h-8 w-8 text-gray-400 hover:text-gray-500" />
+                      
                     </Menu.Button>
                   </div>
                   <Transition

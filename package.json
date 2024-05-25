@@ -1,11 +1,12 @@
 {
-  "name": "edgedb-nextjs-template",
+  "name": "3dfy-hosting-test",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@edgedb/auth-nextjs": "^0.2.0",
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.3",
+    "@octokit/core": "6.1.2",
     "@tailwindcss/forms": "^0.5.7",
     "edgedb": "^1.5.4",
     "next": "14.1.4",

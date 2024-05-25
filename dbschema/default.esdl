@@ -11,18 +11,17 @@ module default {
   );
 
   type User {
-    required identity: ext::auth::Identity {
-      constraint exclusive;
-    };
+    required identity: ext::auth::Identity;
     required name: str;
-    email: str {
+    email: str;
+    required githubUsername: str {
       constraint exclusive;
     };
-  
+    required avatarUrl: str;
+
     userRole: Role {
       default := "user";
     };
-
     created: datetime {
       rewrite insert using (datetime_of_statement());
     }
