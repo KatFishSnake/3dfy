@@ -21,7 +21,7 @@ export default async function DashboardLayout({
 	}
 
 	return (
-		<div className='min-h-full'>
+		<div className='min-h-screen'>
 			<div className='relative isolate px-4 pt-8 sm:px-6 xl:px-16'>
 				<main>
 					<div className='mx-auto max-w-7xl'>{children}</div>

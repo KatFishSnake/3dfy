@@ -84,55 +84,53 @@ export default async function Page({ params: { itemid } }: PageProps) {
 
 	return (
 		<div className='flex-1 custom-screen pt-12'>
-			<div>
-				<div className='flex flex-row justify-between'>
-					<div className='flex gap-2'>
-						{data.output_image_path ? (
-							<Link href={data.output_image_path} download>
-								<Button variant='outline' size='sm'>
-									<FileDown className='w-4 h-4 mr-2' />
-									Download Image
-								</Button>
-							</Link>
-						) : null}
-						{data.output_video_path ? (
-							<Link href={data.output_video_path} download>
-								<Button variant='outline' size='sm'>
-									<FileDown className='w-4 h-4 mr-2' />
-									Download Video
-								</Button>
-							</Link>
-						) : null}
-						{data.output_obj_path ? (
-							<Link href={data.output_obj_path} download>
-								<Button variant='outline' size='sm'>
-									<FileDown className='w-4 h-4 mr-2' />
-									Download OBJ
-								</Button>
-							</Link>
-						) : null}
-						{data.output_mtl_path ? (
-							<Link href={data.output_mtl_path} download>
-								<Button variant='outline' size='sm'>
-									<FileDown className='w-4 h-4 mr-2' />
-									Download MTL
-								</Button>
-							</Link>
-						) : null}
-						{data.output_texture_path ? (
-							<Link href={data.output_texture_path} download>
-								<Button variant='outline' size='sm'>
-									<FileDown className='w-4 h-4 mr-2' />
-									Download Texture
-								</Button>
-							</Link>
-						) : null}
-					</div>
-					<DialogCancelGeneration
-						handleRevalidatePath={handleRevalidatePath}
-						predictionId={data.id}
-					/>
+			<div className='flex flex-row justify-between'>
+				<div className='flex gap-2'>
+					{data.output_image_path ? (
+						<Link href={data.output_image_path} download>
+							<Button variant='outline' size='sm'>
+								<FileDown className='w-4 h-4 mr-2' />
+								Download Image
+							</Button>
+						</Link>
+					) : null}
+					{data.output_video_path ? (
+						<Link href={data.output_video_path} download>
+							<Button variant='outline' size='sm'>
+								<FileDown className='w-4 h-4 mr-2' />
+								Download Video
+							</Button>
+						</Link>
+					) : null}
+					{data.output_obj_path ? (
+						<Link href={data.output_obj_path} download>
+							<Button variant='outline' size='sm'>
+								<FileDown className='w-4 h-4 mr-2' />
+								Download OBJ
+							</Button>
+						</Link>
+					) : null}
+					{data.output_mtl_path ? (
+						<Link href={data.output_mtl_path} download>
+							<Button variant='outline' size='sm'>
+								<FileDown className='w-4 h-4 mr-2' />
+								Download MTL
+							</Button>
+						</Link>
+					) : null}
+					{data.output_texture_path ? (
+						<Link href={data.output_texture_path} download>
+							<Button variant='outline' size='sm'>
+								<FileDown className='w-4 h-4 mr-2' />
+								Download Texture
+							</Button>
+						</Link>
+					) : null}
 				</div>
+				<DialogCancelGeneration
+					handleRevalidatePath={handleRevalidatePath}
+					predictionId={data.id}
+				/>
 			</div>
 			<div className='pt-12'>
 				<div className='space-y-8 md:space-y-12'>

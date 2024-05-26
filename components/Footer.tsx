@@ -2,7 +2,7 @@ import { EdgeDbLogo } from './logos/edgeLogo';
 import { V0Logo } from './logos/v0Logo';
 
 const Footer = () => (
-	<footer>
+	<footer className='bottom-0 w-full h-10'>
 		<div className='custom-screen'>
 			<div className='py-2 items-center justify-between flex'>
 				<p className='text-gray-500 text-xs'>

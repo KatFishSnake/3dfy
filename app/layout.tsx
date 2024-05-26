@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { Analytics } from '@vercel/analytics/react';
 import PlausibleProvider from 'next-plausible';
@@ -60,7 +59,7 @@ export default async function RootLayout({
 				<PlausibleProvider domain='qrgpt.io' />
 			</head>
 			<body>
-				<main className='flex flex-col h-screen'>
+				<main className='flex flex-col min-h-screen'>
 					{!signedIn ? (
 						<header>
 							<nav
