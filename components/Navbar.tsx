@@ -50,7 +50,7 @@ export default function Navbar({
 							<div className='hidden sm:ml-6 sm:flex sm:items-center'>
 								<Menu as='div' className='relative ml-3'>
 									<div className='flex gap-2'>
-										<Link href='dashboard'>
+										<Link href='/dashboard'>
 											<Button variant={'outline'} size='sm'>
 												Dashboard
 											</Button>

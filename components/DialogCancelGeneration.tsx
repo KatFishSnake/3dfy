@@ -20,7 +20,7 @@ export function DialogCancelGeneration({
 	classNameTrigger,
 	handleRevalidatePath,
 }: {
-	label: string;
+	label?: string;
 	predictionId: string;
 	classNameTrigger?: string;
 	handleRevalidatePath: (path: string) => void;
