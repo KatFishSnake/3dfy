@@ -1,5 +1,6 @@
 'use server';
 
+import type { Generation } from '@/dbschema/interfaces';
 import { auth } from '@/edgedb';
 import { revalidatePath } from 'next/cache';
 const authActions = auth.createServerActions();
@@ -35,7 +36,7 @@ export async function checkIfImagesChanged() {
     FILTER .created_by.id = global current_user.id`,
 	);
 
-	if ((generations as any[]).some((gen) => gen.status !== 'succeeded')) {
+	if ((generations as Generation[]).some((gen) => gen.status !== 'succeeded')) {
 		revalidatePath('/');
 	}
 
