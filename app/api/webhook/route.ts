@@ -102,10 +102,8 @@ export async function POST(req: Request) {
 				},
 			);
 
-			console.log('userId', userEmail);
-
 			const { error: errorEmail } = await resend.emails.send({
-				from: 'info@3Dfy.tools',
+				from: 'info@3dfy.tools',
 				to: [userEmail as string],
 				subject: 'Congratulations - Your 3D model is ready!',
 				text: `Dear User,
@@ -113,7 +111,7 @@ export async function POST(req: Request) {
 			Your 3D model is now ready for you to view and download. 
 			
 			Please click the link below to access your model:
-			https://3dfy.tools/${(updateGeneration[0] as { id: string }).id}
+			https://3dfy.tools/${(updateGeneration?.[0] as { id: string })?.id}
 			
 			Thank you for using our service!
 			
