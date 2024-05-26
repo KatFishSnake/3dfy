@@ -1,4 +1,33 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+	images: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'pbxt.replicate.delivery',
+				port: '',
+				pathname: '/**',
+			},
+			{
+				protocol: 'https',
+				hostname: 'replicate.delivery',
+				port: '',
+				pathname: '/**',
+			},
+			{
+				protocol: 'https',
+				hostname: 'g4yqcv8qdhf169fk.public.blob.vercel-storage.com',
+				port: '',
+				pathname: '/**',
+			},
+			{
+				protocol: 'https',
+				hostname: 'utfs.io',
+				port: '',
+				pathname: '/**',
+			},
+		],
+	},
+};
 
 module.exports = nextConfig;

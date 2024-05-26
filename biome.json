@@ -1,0 +1,57 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.7.3/schema.json",
+	"files": {
+		"ignore": [".next", "src/styled-system/**", "public"]
+	},
+	"formatter": {
+		"enabled": true
+	},
+	"javascript": {
+		"formatter": {
+			"jsxQuoteStyle": "single",
+			"quoteStyle": "single"
+		}
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"a11y": {
+				"noAccessKey": "error",
+				"noAriaUnsupportedElements": "error",
+				"noAutofocus": "off",
+				"noNoninteractiveTabindex": "error",
+				"noRedundantRoles": "error",
+				"useHeadingContent": "error"
+			},
+			"complexity": {
+				"noUselessEmptyExport": "error",
+				"noVoid": "error",
+				"useLiteralKeys": "error",
+				"useSimpleNumberKeys": "error"
+			},
+			"correctness": {
+				"noNonoctalDecimalEscape": "error",
+				"useHookAtTopLevel": "error",
+				"useExhaustiveDependencies": "off",
+				"noUnusedImports": "error"
+			},
+			"nursery": {
+				"noDuplicateJsonKeys": "error"
+			},
+			"style": {
+				"useCollapsedElseIf": "error",
+				"useLiteralEnumMembers": "error",
+				"noNonNullAssertion": "off"
+			},
+			"suspicious": {
+				"noConsoleLog": "error",
+				"noUnsafeDeclarationMerging": "error",
+				"useGetterReturn": "error"
+			}
+		}
+	}
+}
