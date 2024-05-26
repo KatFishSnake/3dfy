@@ -1,74 +1,55 @@
-import { auth } from "@/edgedb";
-import Link from "next/link";
-import NextSteps from "@/components/NextSteps";
+import {
+	WireColor,
+	WireColorAlt,
+	WireColorAltAlt,
+	WireGray,
+} from '@/components/LandingPageWires';
+import WorkspaceSection from '@/components/WorkspaceSection';
+import { auth } from '@/edgedb';
+import Image from 'next/image';
 
 export default async function Home() {
-  const session = auth.getSession();
+	const session = await auth.getSession();
+	const isSignedIn = await session.isSignedIn();
 
-  const signedIn = await session.isSignedIn();
-
-  return (
-    <div>
-      <header className="absolute inset-x-0 top-0 z-50">
-        <nav
-          className="flex items-center justify-between p-6 lg:px-8"
-          aria-label="Global"
-        >
-          <div className="flex flex-1 justify-end space-x-2">
-            {!signedIn ? (
-              <>
-                <Link
-                  href={auth.getBuiltinUIUrl()}
-                  prefetch={false}
-                  className="text-sm font-semibold leading-6 text-gray-800"
-                >
-                  <button className="ring-2 ring-inset ring-primary bg-primarylight px-4 py-2 rounded-md">
-                    Sign in
-                  </button>
-                </Link>
-                <Link
-                  href={auth.getBuiltinUISignUpUrl()}
-                  prefetch={false}
-                  className="text-sm font-semibold leading-6 text-gray-900"
-                >
-                  <button className="bg-primary px-4 py-2 rounded-md text-white">
-                    Sign up
-                  </button>
-                </Link>
-              </>
-            ) : (
-              <Link
-                href="dashboard"
-                className="text-sm font-semibold leading-6 text-gray-900"
-              >
-                <button className="bg-primary px-4 py-2 rounded-md text-white">
-                  Dashboard
-                </button>
-              </Link>
-            )}
-          </div>
-        </nav>
-      </header>
-
-      <div className="relative isolate px-6 py-14 lg:px-8">
-        <div className="mx-auto max-w-2xl pt-16 sm:pt-24 lg:pt-32">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              EdgeDB Next.js Starter
-            </h1>
-            <p className="mt-6 text-base leading-7 text-gray-600">
-              Welcome to the EdgeDB Next.js Starter. This starter is designed to
-              help you get up and running with EdgeDB and Next.js quickly. It
-              includes a basic setup for authentication, EdgeDB schema, and a UI
-              to get you started. Below are some next steps to help you get up
-              to speed.
-            </p>
-          </div>
-        </div>
-        <div className="mx-auto max-w-2xl pt-4 sm:pt-8 lg:pt-12">
-          <NextSteps />
-        </div>
-      </div>
-    </div>
-  );
+	return (
+		<div className='flex flex-col items-center justify-center flex-1'>
+			<section>
+				<div className='text-gray-600 custom-screen'>
+					<div className='max-w-4xl mx-auto space-y-5 text-center'>
+						<h1 className='max-w-xl mx-auto text-4xl font-extrabold text-gray-800 sm:text-6xl'>
+							Transform Your <br /> 2D Assets to 3D
+						</h1>
+						<p className='max-w-md mx-auto'>
+							<span className='font-bold'>3Dfy</span>{' '}
+							<Image
+								src='/logo-animation.gif'
+								alt='logo-animated'
+								width={20}
+								height={15}
+								className='inline -mt-2 -ml-1'
+								unoptimized
+							/>{' '}
+							elevates your visuals with our powerful image to model conversion.
+						</p>
+					</div>
+				</div>
+			</section>
+			<section className='flex py-4 w-full nax-w-[1550px]'>
+				<div className='w-full min-h-[350px] h-auto relative overflow-x-hidden overflow-y-visible -mt-12'>
+					<WireGray className='right-0 top-[calc(50%-320px/2)]' />
+					<WireColor className='right-0 top-[calc(50%-320px/2)]' />
+					<WireColorAlt className='right-0 top-[calc(50%-320px/2)]' />
+					<WireColorAltAlt className='right-0 top-[calc(50%-320px/2)]' />
+				</div>
+				<WorkspaceSection isSignedIn={isSignedIn} />
+				<div className='w-full min-h-[350px] h-auto rotate-180 relative overflow-x-hidden overflow-y-visible -mt-12'>
+					<WireGray className='right-0 bottom-[calc(50%-320px/2)]' />
+					<WireColor className='right-0 bottom-[calc(50%-320px/2)]' />
+					<WireColorAlt className='right-0 bottom-[calc(50%-320px/2)]' />
+					<WireColorAltAlt className='right-0 bottom-[calc(50%-320px/2)]' />
+				</div>
+			</section>
+		</div>
+	);
 }

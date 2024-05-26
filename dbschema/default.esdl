@@ -31,8 +31,22 @@ module default {
     }
   }
 
-  type Item {
-    required name: str;
+  type Generation {
+    required replicateId: str;
+    required status: str;
+
+    model: str;
+    output: str;
+    urls: json;
+    input: str;
+    input_image_path: str;
+
+    output_image_path: str;
+    output_video_path: str;
+    output_obj_path: str;
+    output_mtl_path: str;
+    output_texture_path: str;
+
     required created_by: User {
       default := global current_user;
     }
