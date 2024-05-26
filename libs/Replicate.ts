@@ -14,7 +14,7 @@ export class ReplicateClient {
 	generate3DModel = async (
 		request: TwoD3DControlNetRequest,
 	): Promise<Prediction> => {
-		const callbackURL = `${process.env.WEBHOOK_URL}/api/webhook?token=${process.env.WEBHOOK_TOKEN}`;
+		const callbackURL = `https://3dfy.tools/api/webhook?token=${process.env.WEBHOOK_TOKEN}`;
 		const input = {
 			seed: 42,
 			image_path: request.image_path,
