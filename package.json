@@ -4,12 +4,12 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "pnpm run prebuild && next build",
+		"build": "bun run prebuild && next build",
 		"start": "next start",
 		"lint": "next lint",
-		"auth:setup": "pnpm esr password-auth-setup.ts",
-		"prebuild": "pnpm run generate:all",
-		"generate:all": "pnpm generate:edgeql && pnpm generate:interfaces",
+		"auth:setup": "bun esr password-auth-setup.ts",
+		"prebuild": "bun run generate:all",
+		"generate:all": "bun generate:edgeql && bun generate:interfaces",
 		"generate:edgeql": "npx @edgedb/generate edgeql-js",
 		"generate:interfaces": "npx @edgedb/generate interfaces"
 	},

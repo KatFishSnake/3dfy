@@ -32,8 +32,8 @@ const EmailForm = ({ currentUser }: { currentUser: User }) => {
 				Get Notified When Your Model is Ready
 			</h1>
 			<p className='mb-4 text-sm text-zinc-400'>
-				The generation process takes about 1-2 minutes. Enter your email address
-				below and we'll notify you once it's done.
+				{`The generation process takes about 1-2 minutes. Enter your email address
+				below and we'll notify you once it's done.`}
 			</p>
 
 			<form
