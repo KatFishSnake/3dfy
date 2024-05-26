@@ -11,6 +11,7 @@ import { auth } from '@/edgedb';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import Footer from '@/components/Footer';
 
 const title = '3Dfy - 2D to 3D Generator';
 const description =
