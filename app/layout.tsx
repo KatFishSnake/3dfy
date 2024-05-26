@@ -15,9 +15,9 @@ import { Button } from '@/components/ui/button';
 const title = '3Dfy - 2D to 3D Generator';
 const description =
 	'3Dfy elevates your visuals with our powerful image to model conversion';
-const url = 'https://www.example.com';
-const ogimage = 'https://www.example.com/og-image.png';
-const sitename = '3Dfy.io';
+const url = 'https://3dfy.tools';
+const ogimage = 'https://3dfy.tools/og-image.png';
+const sitename = '3dfy.tools';
 
 export const metadata: Metadata = {
 	metadataBase: new URL(url),

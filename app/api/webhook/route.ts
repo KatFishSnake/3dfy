@@ -113,9 +113,7 @@ export async function POST(req: Request) {
 			Your 3D model is now ready for you to view and download. 
 			
 			Please click the link below to access your model:
-			https://3dfy-hosting-test.vercel.app/${
-				(updateGeneration[0] as { id: string }).id
-			}
+			https://3dfy.tools/${(updateGeneration[0] as { id: string }).id}
 			
 			Thank you for using our service!
 			
