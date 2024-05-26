@@ -8,7 +8,10 @@
 		"start": "next start",
 		"lint": "next lint",
 		"auth:setup": "pnpm esr password-auth-setup.ts",
-		"prebuild": "pnpm run generate:all"
+		"prebuild": "pnpm run generate:all",
+		"generate:all": "pnpm generate:edgeql && pnpm generate:interfaces",
+		"generate:edgeql": "npx @edgedb/generate edgeql-js",
+		"generate:interfaces": "npx @edgedb/generate interfaces"
 	},
 	"dependencies": {
 		"@edgedb/auth-nextjs": "0.3.1",
