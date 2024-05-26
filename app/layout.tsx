@@ -10,6 +10,7 @@ import { signout } from './actions';
 import './globals.css';
 import { auth } from '@/edgedb';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
 const title = '3Dfy - 2D to 3D Generator';
@@ -64,9 +65,26 @@ export default async function RootLayout({
 						<header>
 							<nav
 								className={
-									'w-full md:static md:text-sm flex justify-end custom-screen pt-2'
+									'w-full md:static md:text-sm flex justify-between custom-screen pt-2'
 								}
 							>
+								<div>
+									<Link href='/' className='flex items-center'>
+										<Image
+											src='/logo-3.png'
+											alt='logo'
+											width={20}
+											height={20}
+											className='-mb-1 -mr-4'
+										/>
+										<Image
+											src='/logo-animation.gif'
+											alt='logo-animated'
+											width={45}
+											height={45}
+										/>
+									</Link>
+								</div>
 								<div className='items-center flex gap-2'>
 									<Link
 										href={auth.getBuiltinUIUrl()}
@@ -82,7 +100,7 @@ export default async function RootLayout({
 										prefetch={false}
 										className='text-sm font-semibold leading-6 text-gray-900'
 									>
-										<Button size={'sm'} variant={'outline'}>
+										<Button size={'sm'} variant='default'>
 											Sign up
 										</Button>
 									</Link>
