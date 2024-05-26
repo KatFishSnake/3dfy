@@ -13,12 +13,10 @@ import { cn } from '@/utils';
 import { toast } from 'sonner';
 
 function Uploader({
-	onLogin,
 	onUpload,
 	isLoading,
 	withUser,
 }: {
-	onLogin: () => void;
 	onUpload: (file: File | null) => void;
 	isLoading?: boolean;
 	withUser?: boolean;

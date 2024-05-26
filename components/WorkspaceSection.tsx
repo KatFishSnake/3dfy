@@ -89,7 +89,6 @@ const WorkspaceSection = ({ isSignedIn, onLogin }: PropsType) => {
 			</Dialog>
 			<div className='relative w-full max-w-lg p-4 mx-auto bg-white rounded-md shadow-lg'>
 				<Uploader
-					onLogin={onLogin}
 					onUpload={handleSubmit}
 					isLoading={isUploading}
 					withUser={isSignedIn}
